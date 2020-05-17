@@ -1,0 +1,11 @@
+name: beaver
+description: "Little logger for console applications."
+version: 0.0.4
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+# dependencies:
+dev_dependencies:
+  test: ^1.14.3
+  pedantic: ^1.9.0
+  
+
