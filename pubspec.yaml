@@ -1,6 +1,6 @@
 name: beaver
-description: "Little logger for console applications."
-version: 0.0.4
+description: "Little logger for Dart console applications."
+version: 0.0.1
 environment:
   sdk: '>=2.0.0 <3.0.0'
 # dependencies:
