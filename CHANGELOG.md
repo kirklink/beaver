@@ -9,3 +9,6 @@
 
 ## 0.0.3
 - Allow no colour output
+
+## 0.0.4
+- Allow supress console output (just return the output)

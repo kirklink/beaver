@@ -1,7 +1,7 @@
 name: beaver
 homepage: "https://github.com/kirklink/beaver"
 description: "A little logger for Dart console applications."
-version: 0.0.3
+version: 0.0.4
 environment:
   sdk: '>=2.0.0 <3.0.0'
 # dependencies:
