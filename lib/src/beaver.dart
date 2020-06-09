@@ -17,39 +17,63 @@ class Beaver {
   
   Beaver._(this.level);
 
-  void fatal(Object message, {Exception exception, StackTrace stacktrace}) {
+  String fatal(Object message, {Exception exception, StackTrace stacktrace}) {
     if (_shouldLog(Level.fatal)) {
-      _log('- !!! FATAL !!! -', Color.red, Color.red, message, e: exception, s: stacktrace);
+      final box = _log('- !!! FATAL !!! -', Color.red, Color.red, message, e: exception, s: stacktrace);
+      print(box);
+      return box;
+    } else {
+      return '';
     }
   }
   
-  void error(Object message, {Exception exception, StackTrace stacktrace}) {
+  String error(Object message, {Exception exception, StackTrace stacktrace}) {
     if (_shouldLog(Level.error)) {
-      _log('- !! ERROR !! -', Color.red, Color. yellow, message, e: exception, s: stacktrace);
+      final box = _log('- !! ERROR !! -', Color.red, Color. yellow, message, e: exception, s: stacktrace);
+      print(box);
+      return box;
+    } else {
+      return '';
     }
   }
 
-  void warn(Object message, {Exception exception, StackTrace stacktrace}) {
+  String warn(Object message, {Exception exception, StackTrace stacktrace}) {
     if (_shouldLog(Level.warn)) {
-      _log('- ! WARN ! -', Color.yellow, Color.yellow, message, e: exception, s: stacktrace);
+      final box = _log('- ! WARN ! -', Color.yellow, Color.yellow, message, e: exception, s: stacktrace);
+      print(box);
+      return box;
+    } else {
+      return '';
     }
   }
 
-  void info(Object message, {Exception exception, StackTrace stacktrace}) {
+  String info(Object message, {Exception exception, StackTrace stacktrace}) {
     if (_shouldLog(Level.info)) {
-      _log('- INFO -', Color.blue, Color.white, message, e: exception, s: stacktrace);
+      final box = _log('- INFO -', Color.blue, Color.white, message, e: exception, s: stacktrace);
+      print(box);
+      return box;
+    } else {
+      return '';
     }
   }
 
-  void debug(Object message, {Exception exception, StackTrace stacktrace}) {
+  String debug(Object message, {Exception exception, StackTrace stacktrace}) {
     if (_shouldLog(Level.debug)) {
-      _log('- DEBUG -', Color.green, Color.yellow, message, e: exception, s: stacktrace);
+      final box = _log('- DEBUG -', Color.green, Color.yellow, message, e: exception, s: stacktrace);
+      print(box);
+      return box;
+    } else {
+      return '';
     }
   }
 
-  void trace(Object message, {Exception exception, StackTrace stacktrace}) {
+  String trace(Object message, {Exception exception, StackTrace stacktrace}) {
     if (_shouldLog(Level.fatal)) {
-      _log('- TRACE -', Color.magenta, Color.white, message, e: exception, s: stacktrace);
+      final box = _log('- TRACE -', Color.magenta, Color.white, message, e: exception, s: stacktrace);
+      print(box);
+      return box;
+    } else {
+      return '';
     }
   }
 
@@ -64,7 +88,7 @@ class Beaver {
   }
 
 
-  void _log(String label, Color border, Color text, Object o, {Exception e, StackTrace s}) {
+  String _log(String label, Color border, Color text, Object o, {Exception e, StackTrace s}) {
     final box = Box(_width, border);
     box.borderTop();
     box.textRow(label, textColor: text);
@@ -84,7 +108,7 @@ class Beaver {
       
     }
     box.borderBottom();
-    box.draw();
+    return box.create();
   }
 
   // static const Exception _emptyException = _EmptyException();

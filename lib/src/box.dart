@@ -96,6 +96,10 @@ class Box {
     print(lines.toString());
   }
 
+  String create() {
+    return lines.toString();
+  }
+
   void _buildTextLine(Color color, String text) {
     final c = Box.colorCode(color);
     lines.writeln(_borderColor + Box.leftSide + c + text + (' ' * (_freeSpace - text.length)) + _borderColor + Box.rightSide + _colorReset);
