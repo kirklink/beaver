@@ -17,9 +17,11 @@ class Beaver {
   
   Beaver._(this.level);
 
-  String fatal(Object message, {Exception exception, StackTrace stacktrace}) {
+  String fatal(Object message, {Exception exception, StackTrace stacktrace, bool noColor = false}) {
     if (_shouldLog(Level.fatal)) {
-      final box = _log('- !!! FATAL !!! -', Color.red, Color.red, message, e: exception, s: stacktrace);
+      final border = noColor ? Color.none : Color.red;
+      final text = noColor ? Color.none : Color.red;
+      final box = _log('- !!! FATAL !!! -', border, text, message, e: exception, s: stacktrace);
       print(box);
       return box;
     } else {
@@ -27,9 +29,11 @@ class Beaver {
     }
   }
   
-  String error(Object message, {Exception exception, StackTrace stacktrace}) {
+  String error(Object message, {Exception exception, StackTrace stacktrace, bool noColor = false}) {
     if (_shouldLog(Level.error)) {
-      final box = _log('- !! ERROR !! -', Color.red, Color. yellow, message, e: exception, s: stacktrace);
+      final border = noColor ? Color.none : Color.red;
+      final text = noColor ? Color.none : Color.yellow;
+      final box = _log('- !! ERROR !! -', border, text, message, e: exception, s: stacktrace);
       print(box);
       return box;
     } else {
@@ -37,9 +41,11 @@ class Beaver {
     }
   }
 
-  String warn(Object message, {Exception exception, StackTrace stacktrace}) {
+  String warn(Object message, {Exception exception, StackTrace stacktrace, bool noColor = false}) {
     if (_shouldLog(Level.warn)) {
-      final box = _log('- ! WARN ! -', Color.yellow, Color.yellow, message, e: exception, s: stacktrace);
+      final border = noColor ? Color.none : Color.yellow;
+      final text = noColor ? Color.none : Color.yellow;
+      final box = _log('- ! WARN ! -', border, text, message, e: exception, s: stacktrace);
       print(box);
       return box;
     } else {
@@ -47,9 +53,11 @@ class Beaver {
     }
   }
 
-  String info(Object message, {Exception exception, StackTrace stacktrace}) {
+  String info(Object message, {Exception exception, StackTrace stacktrace, bool noColor = false}) {
     if (_shouldLog(Level.info)) {
-      final box = _log('- INFO -', Color.blue, Color.white, message, e: exception, s: stacktrace);
+      final border = noColor ? Color.none : Color.blue;
+      final text = noColor ? Color.none : Color.white;
+      final box = _log('- INFO -', border, text, message, e: exception, s: stacktrace);
       print(box);
       return box;
     } else {
@@ -57,9 +65,11 @@ class Beaver {
     }
   }
 
-  String debug(Object message, {Exception exception, StackTrace stacktrace}) {
+  String debug(Object message, {Exception exception, StackTrace stacktrace, bool noColor = false}) {
     if (_shouldLog(Level.debug)) {
-      final box = _log('- DEBUG -', Color.green, Color.yellow, message, e: exception, s: stacktrace);
+      final border = noColor ? Color.none : Color.green;
+      final text = noColor ? Color.none : Color.yellow;
+      final box = _log('- DEBUG -', border, text, message, e: exception, s: stacktrace);
       print(box);
       return box;
     } else {
@@ -67,9 +77,11 @@ class Beaver {
     }
   }
 
-  String trace(Object message, {Exception exception, StackTrace stacktrace}) {
+  String trace(Object message, {Exception exception, StackTrace stacktrace, bool noColor = false}) {
     if (_shouldLog(Level.fatal)) {
-      final box = _log('- TRACE -', Color.magenta, Color.white, message, e: exception, s: stacktrace);
+      final border = noColor ? Color.none : Color.magenta;
+      final text = noColor ? Color.none : Color.white;
+      final box = _log('- TRACE -', border, text, message, e: exception, s: stacktrace);
       print(box);
       return box;
     } else {

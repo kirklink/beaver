@@ -19,6 +19,7 @@ enum Color {
   magenta,
   cyan,
   white,
-  reset
+  reset,
+  none
 
 }

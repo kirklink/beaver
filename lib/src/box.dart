@@ -22,7 +22,7 @@ class Box {
 
   Box(this.width, Color borderColor) {
     _borderColor = Box.colorCode(borderColor);
-    _colorReset = Box.colorCode(Color.reset);
+    _colorReset = borderColor == Color.none ? '' : Box.colorCode(Color.reset);
     _freeSpace = width - 4;
   }
 
@@ -133,6 +133,9 @@ class Box {
         break;
       case Color.reset:
         return '\u001b[0m';
+        break;
+      case Color.none:
+        return '';
         break;
       default:
         return '\u001b[0m';
