@@ -487,3 +487,9 @@ Future<void> handleRequest(String method, String path, String requestId) async {
 {"timestamp":"2025-01-15T10:30:00.001Z","level":"INFO","logger":"myApp.handler","message":"request started","requestId":"req-001","method":"GET","path":"/api/items"}
 {"timestamp":"2025-01-15T10:30:00.052Z","level":"INFO","logger":"myApp.handler","message":"request completed","requestId":"req-001","status":200}
 ```
+
+---
+
+## Framework Integration
+
+Beaver is part of an interconnected framework. For how it works with Chary (PII-safe fields), Swoop (request logging), and the rest of the stack, see `docs/integration-guide.md` in the workspace root.
