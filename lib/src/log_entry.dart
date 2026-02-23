@@ -28,6 +28,7 @@ class LogEntry {
   /// Optional stack trace.
   final StackTrace? stackTrace;
 
+  /// Creates a log entry with the given fields.
   const LogEntry({
     required this.level,
     required this.message,
