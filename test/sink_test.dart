@@ -14,13 +14,13 @@ void main() {
       String? formatted;
       String? sunk;
 
-      final formatter = (LogEntry e) {
+      String formatter(LogEntry e) {
         formatted = 'formatted:${e.message}';
         return formatted!;
-      };
-      final sink = (String line) {
+      }
+      void sink(String line) {
         sunk = line;
-      };
+      }
 
       final handler = makeHandler(formatter, sink);
       handler(entry);
